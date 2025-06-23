@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Estudiantes | Sistema Académico</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<!-- Se incluye Font Awesome para los iconos y un archivo CSS para estilos personalizados -->
+<!-- Se define el título de la página como "Gestión de Estudiantes | Sistema Académico" -->
+<!-- Se establece la codificación de caracteres a UTF-8 y la vista para dispositivos móviles -->
+
+<body>
+  <!-- Barra de navegación mejorada -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <i class="fas fa-graduation-cap"></i>
+        <span>Portal Estudiantes</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+        <li><a href="estudiantes.html" class="active"><i class="fas fa-users"></i> Estudiantes</a></li>
+        <li><a href="carreras.html"><i class="fas fa-book-open"></i> Carreras</a></li>
+        <li><a href="categorias.html"><i class="fas fa-tags"></i> Categorías</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Barra de navegación que conecta con las demás páginas del sistema.
+       Se resalta “Estudiantes” como activa con `class="active"`. -->
+
+  <main class="container">
+    <header class="page-header">
+      <h1><i class="fas fa-user-graduate"></i> Gestión de Estudiantes</h1>
+      <p>Administra el registro de estudiantes del sistema académico</p>
+    </header>
+
+
+    <!-- Sección: Registrar Estudiante -->
+    <section class="card">
+      <div class="card-header">
+        <h2><i class="fas fa-user-plus"></i> Registrar Nuevo Estudiante</h2>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="registerName">Nombre del Estudiante</label>
+          <input type="text" id="registerName" class="form-control" placeholder="Ingrese el nombre completo">
+        </div>
+        <div class="form-group">
+          <label for="studentCategory">Carrera</label>
+          <select id="studentCategory" class="form-control">
+            <option value="" disabled selected>Seleccione una carrera</option>
+          </select>
+        </div>
+        <button onclick="registerStudent()" class="btn btn-primary">
+          <i class="fas fa-save"></i> Registrar Estudiante
+        </button>
+        <div class="result-container" id="registerResult"></div>
+      </div>
+    </section>
+    <!-- Esta sección permite ingresar el nombre de un nuevo estudiante y seleccionar su carrera.
+         Al hacer clic en “Registrar Estudiante”, se llama a `registerStudent()` definida en `app.js`.
+         El resultado se muestra en `registerResult`. -->
+
+    <!-- Sección: Buscar Estudiante por ID -->
+    <section class="card">
+      <div class="card-header">
+        <h2><i class="fas fa-search"></i> Buscar Estudiante por ID</h2>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="studentId">ID del Estudiante</label>
+          <input type="number" id="studentId" class="form-control" placeholder="Ingrese el ID del estudiante">
+        </div>
+        <button onclick="getStudentById()" class="btn btn-secondary">
+          <i class="fas fa-search"></i> Buscar
+        </button>
+        <div class="result-container" id="getResult"></div>
+      </div>
+    </section>
+    <!-- Esta sección permite buscar un estudiante por su ID.
+         Al hacer clic en “Buscar”, se llama a `getStudentById()` definida en `app.js`.
+         El resultado se muestra en `getResult`. -->
+
+    <!-- Sección: Buscar Estudiantes por Carrera -->
+    <section class="card">
+      <div class="card-header">
+        <h2><i class="fas fa-filter"></i> Buscar Estudiantes por Carrera</h2>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="careerFilter">Nombre de la Carrera</label>
+          <input type="text" id="careerFilter" class="form-control" placeholder="Ingrese el nombre de la carrera">
+        </div>
+        <button onclick="getStudentsByCareer()" class="btn btn-secondary">
+          <i class="fas fa-filter"></i> Filtrar
+        </button>
+        <div class="table-responsive" id="careerResult"></div>
+      </div>
+    </section>
+    <!-- Esta sección permite filtrar estudiantes por carrera.
+         Al ingresar el nombre de la carrera y hacer clic en “Filtrar”,
+         se llama a `getStudentsByCareer()` definida en `app.js`.
+         El resultado se muestra en `careerResult` como una tabla. -->
+
+    <!-- Sección: Eliminar Estudiante -->
+    <section class="card">
+      <div class="card-header">
+        <h2><i class="fas fa-user-times"></i> Eliminar Estudiante</h2>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="deleteId">ID del Estudiante</label>
+          <input type="number" id="deleteId" class="form-control" placeholder="Ingrese el ID del estudiante">
+        </div>
+        <button onclick="deleteStudent()" class="btn btn-danger">
+          <i class="fas fa-trash-alt"></i> Eliminar
+        </button>
+        <div class="result-container" id="deleteResult"></div>
+      </div>
+    </section>
+  </main>
+  <!-- Esta sección permite eliminar un estudiante por su ID.
+       Al hacer clic en “Eliminar”, se llama a `deleteStudent()` definida en `app.js`.
+       El resultado se muestra en `deleteResult`. -->
+       
+  <!-- Scripts necesarios -->
+  <script src="app.js"></script>
+ <!-- Se carga el archivo `app.js` donde están las funciones llamadas desde los botones. -->
+
+</body>
+</html>
+
+
+
+

@@ -196,3 +196,18 @@ This must be included in every request.
 
 **Happy coding! 🚀**
 
+"Actúa como un ingeniero de software senior especializado en JavaScript. Necesito:  
+
+1. **Revisión de código:**  
+   - Objetivo: Optimizar este archivo JS (pega el código) manteniendo SweetAlert2 y DataTables.  
+   - Elimina redundancias pero conserva todos los comentarios.  
+   - Sugiere una estructura modular.  
+
+2. **Solución de problemas:**  
+   - Error: Al eliminar estudiantes, la tabla no se actualiza hasta recargar la página.  
+     >> Proporciona código que actualice DataTables automáticamente después de DELETE.  
+   - Error: API retorna 500 cuando se envía data mal formateada.  
+     >> Sugiere validación con JavaScript antes del fetch.  
+
+3. **Documentación:**  
+   - Genera un resumen en formato Markdown de los prompts que usaría para resolver estos problemas con IA."  

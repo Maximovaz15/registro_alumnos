@@ -1,42 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Student API Client</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio | Gestión Académica</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Student API Client</h1>
-
-    <section>
-        <h2>Register Student</h2>
-        <input type="text" id="registerName" placeholder="Name">
-        <input type="text" id="registerCareer" placeholder="Career">
-        <button onclick="registerStudent()">Register</button>
-        <pre id="registerResult"></pre>
-    </section>
-
-    <section>
-        <h2>Get Student by ID</h2>
-        <input type="number" id="studentId" placeholder="Student ID">
-        <button onclick="getStudentById()">Get Student</button>
-        <pre id="getResult"></pre>
-    </section>
-
-    <section>
-        <h2>Get Students by Career</h2>
-        <input type="text" id="careerFilter" placeholder="Career">
-        <button onclick="getStudentsByCareer()">Get Students</button>
-        <pre id="careerResult"></pre>
-    </section>
-
-    <section>
-        <h2>Delete Student</h2>
-        <input type="number" id="deleteId" placeholder="Student ID">
-        <button onclick="deleteStudent()">Delete Student</button>
-        <pre id="deleteResult"></pre>
-    </section>
-
-    <script src="app.js"></script>
+  
+  <section class="hero">
+    <div class="hero-content">
+      <i class="fas fa-graduation-cap hero-icon"></i>
+      <h1>Sistema de Gestión Académica</h1>
+      <p class="text-center">Plataforma integral para la administración de estudiantes, carreras y categorías académicas</p>
+      
+      <div class="module-grid">
+        <a href="estudiantes.html" class="module-card hover-grow">
+          <i class="fas fa-users module-icon"></i>
+          <h3 class="module-title">Estudiantes</h3>
+          <p class="module-description">Gestión completa del registro estudiantil</p>
+        </a>
+        
+        <a href="carreras.html" class="module-card hover-grow">
+          <i class="fas fa-book-open module-icon"></i>
+          <h3 class="module-title">Carreras</h3>
+          <p class="module-description">Administración de programas académicos</p>
+        </a>
+        
+        <a href="categorias.html" class="module-card hover-grow">
+          <i class="fas fa-tags module-icon"></i>
+          <h3 class="module-title">Categorías</h3>
+          <p class="module-description">Clasificación académica especializada</p>
+        </a>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
