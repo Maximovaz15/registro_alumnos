@@ -4,7 +4,7 @@ const fs = require('fs');
 const app = express();
 const PORT = 5001;
 
-// API Key ficticia
+// A...PI Key ficticia
 const API_KEY = '12345ABCDEF';
 
 // Middleware
