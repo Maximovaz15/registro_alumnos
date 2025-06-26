@@ -1,0 +1,38 @@
+[
+  {
+    "id": 2,
+    "name": "Electrónica"
+  },
+  {
+    "id": 3,
+    "name": "Mecánica"
+  },
+  {
+    "id": 4,
+    "name": "Civil"
+  },
+  {
+    "id": 5,
+    "name": "Programación"
+  },
+  {
+    "id": 6,
+    "name": "Redes y sistemas"
+  },
+  {
+    "id": 7,
+    "name": "Logística"
+  },
+  {
+    "id": 9,
+    "name": "Informatica"
+  },
+  {
+    "id": 10,
+    "name": "Diseño de Bases de Datos"
+  },
+  {
+    "id": 11,
+    "name": "Electricidad"
+  }
+]

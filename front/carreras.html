@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Carreras</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- jQuery necesario para DataTables -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  
+  <!-- DataTables JS -->
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+</head>
+<!-- Se incluye Font Awesome para los iconos y un archivo CSS para estilos personalizados -->
+<!-- Se define el título de la página como "Gestión de Carreras" -->
+<body class="dark-theme">
+
+<!-- =============================== -->
+<!-- Barra de navegación principal -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-brand">
+      <i class="fas fa-graduation-cap"></i>
+      <span>Portal Carreras</span>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+      <li><a href="estudiantes.html"><i class="fas fa-users"></i> Estudiantes</a></li>
+      <li><a href="carreras.html" class="active"><i class="fas fa-book-open"></i> Carreras</a></li>
+      <li><a href="categorias.html"><i class="fas fa-tags"></i> Categorías</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Barra de navegación que permite ir a otras secciones del sistema. 
+     El link de “Carreras” está activo (clase active). -->
+
+<div class="container">
+  <header class="page-header">
+    <h1><i class="fas fa-book-open"></i> Gestión de Carreras</h1>
+    <p>Administra el registro de carreras académicas</p>
+  </header>
+  <!-- Encabezado de la página con título y descripción. -->
+
+  <main class="main-content">
+
+    <!-- =============================== -->
+    <!-- Sección: Registrar nueva carrera -->
+    <section class="card">
+      <div class="card-header">
+        <h2><i class="fas fa-plus-circle"></i> Registrar Nueva Carrera</h2>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="careerName" class="form-label">Nombre</label>
+          <input type="text" id="careerName" class="form-control" placeholder="Ej. Ingeniería Informática">
+        </div>
+        <div class="form-group">
+          <label for="careerCategory" class="form-label">Categoría</label>
+          <select id="careerCategory" class="form-control">
+            <option value="" disabled selected>Seleccione una categoría</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="careerDuration" class="form-label">Duración (años)</label>
+          <input type="number" id="careerDuration" class="form-control" placeholder="Ej. 5">
+        </div>
+        <div class="form-group">
+          <label for="careerType" class="form-label">Tipo</label>
+          <select id="careerType" class="form-control">
+            <option value="" disabled selected>Seleccione un tipo</option>
+            <option value="Licenciatura">Licenciatura</option>
+            <option value="Tecnicatura">Tecnicatura</option>
+            <option value="Doctorado">Doctorado</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" onclick="registerCareer()">
+          <i class="fas fa-save"></i> Guardar Carrera
+        </button>
+        <div class="career-result" id="registerCareerResult"></div>
+      </div>
+    </section>
+    <!-- Esta sección permite registrar una nueva carrera. Se rellenan 4 campos 
+         (nombre, categoría, duración y tipo), y al hacer clic en “Guardar” 
+         se ejecuta `registerCareer()` que llama al backend para registrar
+         la carrera. El resultado se muestra en `registerCareerResult`. -->
+
+    <!-- =============================== -->
+    <!-- Sección: Buscar carrera por ID -->
+    <section class="card">
+      <div class="card-header">
+        <h2><i class="fas fa-search"></i> Buscar Carrera por ID</h2>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="careerId" class="form-label">ID de la Carrera</label>
+          <input type="text" id="careerId" class="form-control" placeholder="Ingrese ID de la carrera">
+        </div>
+        <button class="btn btn-secondary" onclick="getCareerById()">
+          <i class="fas fa-search"></i> Buscar
+        </button>
+        <div class="career-result" id="getCareerResult"></div>
+      </div>
+    </section>
+    <!-- Esta sección permite buscar una carrera por su ID. 
+         Al ingresar el ID y hacer clic en “Buscar”, se llama a `getCareerById()`-->
+
+    <!-- =============================== -->
+    <!-- Sección: Ver todas las carreras -->
+    <section class="card">
+      <div class="card-header">
+        <h2><i class="fas fa-list"></i> Todas las Carreras</h2>
+      </div>
+      <div class="card-body">
+        <button class="btn btn-secondary" onclick="getAllCareers()">
+          <i class="fas fa-sync-alt"></i> Mostrar Carreras
+        </button>
+        <div class="table-container" id="careersTableContainer"></div>
+      </div>
+    </section>
+    <!-- Esta sección muestra todas las carreras registradas. 
+         Al hacer clic en “Mostrar Carreras”, se llama a `getAllCareers()` 
+         que consulta al backend y muestra los resultados en una tabla. -->
+
+  </main>
+</div>
+
+<!-- =============================== -->
+<!-- Scripts necesarios -->
+<script src="app.js"></script>
+<!-- Se carga el archivo `app.js` donde están las funciones llamadas desde los botones -->
+
+</body>
+</html>

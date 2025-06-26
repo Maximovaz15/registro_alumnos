@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Ingeniería en Sistemas Computacionales",
+    "duration": "4",
+    "category": "Programación"
+  },
+  {
+    "id": 2,
+    "name": "Ingeniería en Software",
+    "duration": "3",
+    "category": "Programación"
+  },
+  {
+    "id": 3,
+    "name": "Ingeniería en Computación",
+    "duration": "3",
+    "category": "Informatica"
+  },
+  {
+    "id": 4,
+    "name": "Licenciatura en Ciencias de la Computación",
+    "duration": "3",
+    "category": "Electrónica"
+  }
+]
